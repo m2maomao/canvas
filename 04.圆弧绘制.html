@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas</title>
+</head>
+<body>
+  <canvas id="canvas1" width="600" height="400"></canvas>
+  <script>
+    const c1 = document.getElementById('canvas1');
+    const ctx = c1.getContext('2d');
+    //1、 圆弧绘制arc（圆心x, 圆心y, 半径, 开始弧度， 结束弧度， 是否顺时针[默认，false]，逆时针true）
+    // ctx.beginPath();
+    // ctx.arc(100, 100, 50, 0, Math.PI);
+    // ctx.fill();
+    // ctx.closePath();
+
+    // 2、绘制笑脸
+    // ctx.beginPath();
+    // ctx.arc(75, 75, 50, 0, Math.PI * 2);
+    // ctx.stroke();
+    // ctx.closePath();
+    // // 绘制嘴巴
+    // ctx.beginPath();
+    // ctx.arc(75, 75, 40, 0, Math.PI);
+    // ctx.stroke();
+    // // 绘制左眼
+    // ctx.beginPath();
+    // ctx.arc(60, 50, 10, 0, Math.PI);
+    // ctx.stroke();
+    // ctx.closePath();
+    // // 绘制右眼
+    // ctx.beginPath();
+    // ctx.arc(90, 50, 10, 0, Math.PI);
+    // ctx.stroke();
+    // ctx.closePath();
+
+    // 3、绘制笑脸（使用moveTo可以绘制不连续的路径）
+    ctx.beginPath();
+    ctx.arc(75, 75, 50, 0, Math.PI * 2);
+    ctx.moveTo(115, 75)
+    // 绘制嘴巴
+    ctx.arc(75, 75, 40, 0, Math.PI);
+    ctx.moveTo(70, 50);
+    // 绘制左眼
+    ctx.arc(60, 50, 10, 0, Math.PI);
+    ctx.moveTo(100, 50);
+    // 绘制右眼
+    ctx.arc(90, 50, 10, 0, Math.PI);
+    ctx.stroke();
+    ctx.closePath();
+  </script>
+</body>
+</html>
